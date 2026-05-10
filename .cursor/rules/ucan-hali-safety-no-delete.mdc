@@ -1,0 +1,10 @@
+---
+description: Dosya silme yasağı ve güvenli çalışma
+alwaysApply: true
+---
+
+# Güvenlik
+
+- Dosya ve klasör silme işlemi yapma (`delete`, `rm`, kalıcı silme). Kaldırma gerekiyorsa kullanıcıya sor veya içeriği yorum satırı / kullanılmıyor işaretiyle bırak.
+- Workspace dışında dosya oluşturma/değiştirme yok; sadece proje kökü `UCAN_HALI`.
+- Büyük toplu değişiklik öncesi diff’i küçük parçalara böl.

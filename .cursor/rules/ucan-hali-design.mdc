@@ -1,0 +1,12 @@
+---
+description: Tailwind / görsel dil
+globs: "**/*.{svelte,css}"
+alwaysApply: false
+---
+
+# Görsel dil
+
+- Primary: koyu orman yeşili; sayfa zemini çok soluk mint/off-white.
+- Oyuncu: açık header/footer, slate tablo başlıkları, ince gri border.
+- İşletme paneli: koyu sidebar, yeşil CTA; durumlar pill (ÖDENDİ, ELDEN ALINACAK).
+- Tek font (örn. Inter); üst-nav aktif sekme alt çizgisi; tasarımla aynı padding/boşluk.

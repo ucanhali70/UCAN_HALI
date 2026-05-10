@@ -1,0 +1,12 @@
+---
+description: Uçan Halı temel proje kuralları
+alwaysApply: true
+---
+
+# Uçan Halı – çekirdek
+
+- Oyuncu sitesi + işletme SaaS; stack: Svelte, Tailwind v4, .NET Web API, Supabase (geçici altyapı).
+- İş mantığını UI’dan ayır: `lib/domain` + `lib/application`; altyapı sadece adapter/repository’de.
+- UI’da Supabase/SDK’yı doğrudan sık kullanma; soyut arayüz + adapter tercih et.
+- Mobil öncelik, hafif sayfa, PWA hedefi; gereksiz refactor yok, sadece istenen iş.
+- Tasarım mockup’larına renk, tipografi, spacing ve bileşen hiyerarşisinde sadık kal.

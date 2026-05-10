@@ -1,0 +1,10 @@
+---
+description: .NET API katmanları
+globs: "**/*.cs"
+alwaysApply: false
+---
+
+# Backend
+
+- HTTP ince; iş kuralları Application; entity Domain; DB/Supabase Infrastructure.
+- Client ile paylaşılan sözleşme net (DTO); hassas işler API üzerinden.
