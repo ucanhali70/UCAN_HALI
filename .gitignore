@@ -6,6 +6,24 @@ dist/
 # Env files
 .env
 .env.*
+*.env
+*.env.*
+**/.env
+**/.env.*
+!.env.example
+!**/.env.example
+
+# Local secrets (inside project, never pushed)
+.secrets/*
+!.secrets/.gitkeep
+*.secret
+*.secrets.json
+
+# .NET local config
+appsettings.Local.json
+appsettings.*.Local.json
+**/appsettings.Local.json
+**/appsettings.*.Local.json
 
 # Logs
 *.log
