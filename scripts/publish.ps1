@@ -8,6 +8,11 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
+$RepoRoot = Resolve-Path (Join-Path $PSScriptRoot "..")
+$WebPath = Join-Path $RepoRoot "apps/web"
+$WebDistPath = Join-Path $WebPath "dist"
+$PagesPath = Join-Path $RepoRoot "docs"
+
 if (-not (Test-Path ".git")) {
     Write-Host "Git repository bulunamadi. Once ilk kurulum komutlarini calistir:"
     Write-Host "git init"
@@ -21,6 +26,25 @@ if (-not $hasRemote) {
     Write-Host "origin remote tanimli degil. Ornek:"
     Write-Host "git remote add origin <REPO_URL>"
     exit 1
+}
+
+# Build static frontend and copy output to docs for GitHub Pages "Deploy from branch".
+if (Test-Path $WebPath) {
+    Push-Location $WebPath
+    try {
+        npm run build
+    } finally {
+        Pop-Location
+    }
+
+    if (-not (Test-Path $WebDistPath)) {
+        Write-Host "Build sonrasi dist klasoru bulunamadi: $WebDistPath" -ForegroundColor Red
+        exit 1
+    }
+
+    New-Item -ItemType Directory -Force -Path $PagesPath | Out-Null
+    Copy-Item (Join-Path $WebDistPath "*") $PagesPath -Recurse -Force
+    New-Item -ItemType File -Force -Path (Join-Path $PagesPath ".nojekyll") | Out-Null
 }
 
 git add .
