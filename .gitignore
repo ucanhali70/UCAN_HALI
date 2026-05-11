@@ -41,5 +41,3 @@ obj/
 Thumbs.db
 .vs/
 
-# Disabled Pages workflow file (using deploy-from-branch model)
-.github/workflows/deploy-pages.yml
