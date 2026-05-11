@@ -34,3 +34,8 @@ Bu projede gizli bilgiler repoya yazilmaz.
 - `git status --short`
 - `git diff --cached --name-only`
 - `.env`, `appsettings.Local.json`, `.secrets/`, `*.secret` gibi dosyalar listede olmamali.
+
+## 6) Tek komutla gonderim
+
+- PowerShell: `.\scripts\publish.ps1 "mesaj"`
+- Batch (tek tik): `.\scripts\publish.bat mesaj`
